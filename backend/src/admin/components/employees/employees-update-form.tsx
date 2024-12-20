@@ -7,9 +7,9 @@ import {
   Table,
   Text,
 } from "@medusajs/ui";
-import { useState, useEffect } from "react";
-import { EmployeeDTO, CompanyDTO } from "src/modules/company/types/common";
-import { UpdateEmployeeDTO } from "src/modules/company/types/mutations";
+import { QueryCompany, QueryEmployee } from "@starter/types";
+import { useState } from "react";
+import { AdminUpdateEmployee } from "@starter/types";
 import { currencySymbolMap } from "../../utils";
 import { CoolSwitch } from "../common";
 
@@ -20,9 +20,9 @@ export function EmployeesUpdateForm({
   loading,
   error,
 }: {
-  employee: EmployeeDTO;
-  company: CompanyDTO;
-  handleSubmit: (data: UpdateEmployeeDTO) => Promise<void>;
+  employee: QueryEmployee;
+  company: QueryCompany;
+  handleSubmit: (data: AdminUpdateEmployee) => Promise<void>;
   loading: boolean;
   error: Error | null;
 }) {

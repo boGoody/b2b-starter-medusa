@@ -35,6 +35,8 @@ export type AdminCreateCompany = {
   currency_code: string;
 };
 
+export type AdminUpdateCompany = Partial<AdminCreateCompany>;
+
 /* Employee */
 
 export type AdminEmployeeResponse = {
@@ -49,7 +51,10 @@ export type AdminCreateEmployee = {
   spending_limit: number;
   is_admin: boolean;
   company_id: string;
+  customer_id?: string;
 };
+
+export type AdminUpdateEmployee = Partial<AdminCreateEmployee>;
 
 /* Store */
 
